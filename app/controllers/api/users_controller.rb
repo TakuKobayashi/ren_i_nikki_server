@@ -8,6 +8,8 @@ class Api::UsersController < Api::BaseController
       if google_account.new_record?
         user = User.create!(name: params[:name])
         google_account.update!(user_id: user.id)
+      else
+      	user = google_account.user
       end
       device = user.devices.find_or_initialize_by(bluetooth_mac_address: params[:mac_address])
       device.update!(category: params[:category], notification_token: params[:notification_token])
