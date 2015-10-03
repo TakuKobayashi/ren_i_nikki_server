@@ -18,6 +18,6 @@
 #  index_accounts_on_user_id_and_account_type  (user_id,account_type) UNIQUE
 #
 
-class Account < ActiveRecord::Base
-  belongs_to :user
+class GoogleAccount < Account
+  default_value_for(:account_type) { "GoogleAccount" }
 end

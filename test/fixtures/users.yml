@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  name            :string(255)
 #  token           :string(255)      not null
-#  using_device_id :integer          not null
+#  using_device_id :integer
 #  last_login_at   :datetime         not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null

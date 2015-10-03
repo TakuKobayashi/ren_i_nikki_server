@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :token, null: false
-      t.integer :using_device_id, null: false
+      t.integer :using_device_id
       t.datetime :last_login_at, null: false
       t.timestamps null: false
     end

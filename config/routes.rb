@@ -55,4 +55,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  namespace :api, format: false, defaults: { format: :json } do
+    resources :users, only: [] do
+      collection do
+        post :login
+      end
+    end
+  end
 end
