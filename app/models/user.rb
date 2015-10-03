@@ -23,4 +23,5 @@ class User < ActiveRecord::Base
   default_value_for(:last_login_at) { Time.current }
 
   has_one :google_account, class_name: "GoogleAccount", foreign_key: :user_id
+  has_many :devices, class_name: "Device"
 end
