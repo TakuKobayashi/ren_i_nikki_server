@@ -61,5 +61,10 @@ Rails.application.routes.draw do
         post :login
       end
     end
+    resources :tv_program, only: [] do
+      collection do
+        post :capture
+      end
+    end
   end
 end

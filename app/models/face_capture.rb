@@ -15,4 +15,11 @@
 #
 
 class FaceCapture < ActiveRecord::Base
+  enum expression_category: {
+  	neutral: 0,
+  	happiness: 1,
+  	anger: 2,
+  	surprise: 3,
+  	sadness: 4
+  }
 end
