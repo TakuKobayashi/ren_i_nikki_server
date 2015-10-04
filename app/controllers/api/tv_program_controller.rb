@@ -8,9 +8,7 @@ class Api::TvProgramController < Api::BaseController
     face.expression_category = cats if cats.present?
     face.save!
     target = FaceCapture.where.not(user_id: @user.id).where("updated_at > ?", 30.second.ago).sample.try(:user)
-    if target.present?
-      Device.send_message({title: "奇跡が起こりました!", message: "今すぐ起こった奇跡を確認してみよう!!"}, [target.id, @user.id])
-    end
+    Device.send_message({title: "奇跡が起こりました!", message: "今すぐ起こった奇跡を確認してみよう!!"})
     head(:ok)
   end
 end
